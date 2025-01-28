@@ -10,8 +10,9 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from redis.asyncio import Redis
 from redis import ConnectionError as RedisConnectionError
 
-from bloxlink_lib.models import users, guilds
+import bloxlink_lib.models.guilds as guilds
 from bloxlink_lib import BaseModel
+from bloxlink_lib.models.roblox import users
 from .config import CONFIG
 
 mongo: AsyncIOMotorClient = None

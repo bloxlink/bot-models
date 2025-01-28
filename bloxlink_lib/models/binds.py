@@ -8,16 +8,17 @@ from pydantic import Field, ValidationError
 
 from bloxlink_lib import database
 
-from ..models.base import BaseModel, CoerciveSet, RobloxEntity, SnowflakeSet, create_entity
+from .base import BaseModel, CoerciveSet, SnowflakeSet
+from .roblox.base import RobloxEntity, create_entity
 from ..utils import find
 
 if TYPE_CHECKING:
     from hikari import Member
 
-    from .base_assets import RobloxBaseAsset
-    from .groups import RobloxGroup
+    from .roblox.base_assets import RobloxBaseAsset
+    from .roblox.groups import RobloxGroup
     from .guilds import RoleSerializable, GuildData
-    from .users import MemberSerializable, RobloxUser
+    from .roblox.users import MemberSerializable, RobloxUser
 
 
 POP_OLD_BINDS: bool = False  # remove old binds from the database
